@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Incorrectly using innerHTML to update a non-existent element
+    document.getElementById('nonExistent').innerHTML = "This text won't show.";
+    
+    // Correct way to check if an element exists before manipulating it:
+    const myDiv = document.getElementById('myDiv');
+    if(myDiv){
+      myDiv.innerHTML = "This text will show after update.";
+    }
+  </script>
+</body>
+</html>
